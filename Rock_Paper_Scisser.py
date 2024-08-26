@@ -7,31 +7,42 @@
 # Scissor = -1
 import random
 
-computer =random.choice([1,0,-1])
 
-youstr = (input("Enter Your Choice ="))
+print("Enter : Rock for R, Paper for P, Scissor for S \nPress any other Button Game end....")
 
-youDict={ "R":1,"P":0,"S":-1}
 
-reverseDict={1:"Rock",0:"Paper",-1:"Scissor"}
-you=youDict[youstr]
+while True :
 
-print(f"Computer Choice ..{reverseDict[computer]} | You choice... {reverseDict[you]}")
-if(computer==you):
-    print("Match Draw...")
-else:
-    if(computer == 1 and you == 0):
-        print("You Win ..")
-    elif(computer == 1 and you == -1):
-        print("You Loss ..")
-    elif(computer == 0 and you == 1):
-        print("You loss ..")
-    elif(computer == 0 and you == -1):
-        print("You Win ..")
-    elif(computer == -1 and you == 0):
-        print("You loss ..")
-    elif(computer == -1 and you == 1):
-        print("You Win ..")
+    computer =random.choice([1,0,-1])
+    computerDict={ 1:"R",0:"P",-1:"S"}
+    com=computerDict[computer]
+
+    reverseDict={1:"Rock",0:"Paper",-1:"Scissor"}
+    youreverseDict={"R":"Rock","P":"Paper","S":"Scissor"}
+
+    youstr =input("Enter Your Choice =")
+
+    if  youstr != "R" and youstr != "P" and youstr != "S":
+        print("Some input wrong enter....")
+        print("Game End....")
+        break
+    elif(com==youstr):
+        print("Match Draw...")
     else:
-        print("Some thing wrong enter....")
+        if (com == "R" and youstr == "P"):
+            print("You Win ..")
+        elif (com == "R" and youstr == "S"):
+            print("You Loss ..")
+        elif (com == "P" and youstr == "R"):
+            print("You loss ..")
+        elif (com == "P" and youstr == "S"):
+            print("You Win ..")
+        elif (com == "S" and youstr == "P"):
+            print("You loss ..")
+        elif (com == "S" and youstr == "R"):
+            print("You Win ..")
+
+    print(f"Computer Choice ..{reverseDict[computer]} | You choice... {youreverseDict[youstr]} \n")
+    
+    
 
